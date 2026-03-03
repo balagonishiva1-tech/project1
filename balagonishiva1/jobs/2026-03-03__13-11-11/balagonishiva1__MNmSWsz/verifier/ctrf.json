@@ -1,0 +1,68 @@
+{
+    "results": {
+        "tool": {
+            "name": "pytest",
+            "version": "8.4.1"
+        },
+        "summary": {
+            "tests": 4,
+            "passed": 0,
+            "failed": 4,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1772543483.8824556,
+            "stop": 1772543483.9248033
+        },
+        "tests": [
+            {
+                "name": "test_outputs.py::test_output_file_exists",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.000746450999940862,
+                "start": 1772543483.891987,
+                "stop": 1772543483.9146225,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_output_file_exists():\n        \"\"\"Check that output.json file is created.\"\"\"\n>       assert os.path.exists(OUTPUT_PATH), \"output.json was not created\"\nE       AssertionError: output.json was not created\nE       assert False\nE        +  where False = <function exists at 0x7b54095b3600>('/app/output.json')\nE        +    where <function exists at 0x7b54095b3600> = <module 'posixpath' (frozen)>.exists\nE        +      where <module 'posixpath' (frozen)> = os.path\n\n/tests/test_outputs.py:10: AssertionError",
+                "message": "The test failed in the call phase due to an assertion error"
+            },
+            {
+                "name": "test_outputs.py::test_output_is_valid_json",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005973539991828147,
+                "start": 1772543483.9149458,
+                "stop": 1772543483.9179046,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_output_is_valid_json():\n        \"\"\"Check that output.json contains valid JSON.\"\"\"\n>       with open(OUTPUT_PATH) as f:\n             ^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/app/output.json'\n\n/tests/test_outputs.py:15: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_outputs.py::test_status_is_success",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0006692480001220247,
+                "start": 1772543483.9182086,
+                "stop": 1772543483.9211187,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_status_is_success():\n        \"\"\"Check that status field equals 'success'.\"\"\"\n>       with open(OUTPUT_PATH) as f:\n             ^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/app/output.json'\n\n/tests/test_outputs.py:22: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            },
+            {
+                "name": "test_outputs.py::test_processed_flag",
+                "status": "failed",
+                "raw_status": "call_failed",
+                "duration": 0.0005973620009172009,
+                "start": 1772543483.9214106,
+                "stop": 1772543483.9244068,
+                "retries": 0,
+                "file_path": "test_outputs.py",
+                "trace": "def test_processed_flag():\n        \"\"\"Check that processed flag is True.\"\"\"\n>       with open(OUTPUT_PATH) as f:\n             ^^^^^^^^^^^^^^^^^\nE       FileNotFoundError: [Errno 2] No such file or directory: '/app/output.json'\n\n/tests/test_outputs.py:30: FileNotFoundError",
+                "message": "The test failed in the call phase"
+            }
+        ]
+    }
+}
